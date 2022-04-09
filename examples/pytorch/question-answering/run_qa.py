@@ -426,7 +426,7 @@ def main():
     if training_args.do_train:
         if "train" not in raw_datasets:
             raise ValueError("--do_train requires a train dataset")
-        train_dataset = raw_datasets["train"].select(range(70))
+        train_dataset = raw_datasets["train"]
         if data_args.max_train_samples is not None:
             # We will select sample from whole data if argument is specified
             max_train_samples = min(len(train_dataset), data_args.max_train_samples)
@@ -496,7 +496,7 @@ def main():
     if training_args.do_eval:
         if "validation" not in raw_datasets:
             raise ValueError("--do_eval requires a validation dataset")
-        eval_examples = raw_datasets["validation"].select(range(30))
+        eval_examples = raw_datasets["validation"]
         if data_args.max_eval_samples is not None:
             # We will select sample from whole data
             max_eval_samples = min(len(eval_examples), data_args.max_eval_samples)
