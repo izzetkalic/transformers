@@ -584,6 +584,8 @@ def main():
     metric = load_metric("squad_v2" if data_args.version_2_with_negative else "squad")
 
     def compute_metrics(p: EvalPrediction):
+        print(p.predictions)
+        print(p.label_ids)
         return metric.compute(predictions=p.predictions, references=p.label_ids)
 
     # Initialize our Trainer
