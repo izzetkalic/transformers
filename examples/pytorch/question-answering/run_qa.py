@@ -390,8 +390,13 @@ def main():
             sample_index = sample_mapping[i]
             answers = examples[answer_column_name][sample_index]
             # If no answers are given, set the cls_index as answer.
+            print('EXAMPLESSS=????????????')
+            print(examples[answer_column_name])
+            print('SAMPLE_INDEX=????????????')
+            print(sample_index)
+            print('ANSWERSSS=????????????')
             print(answers)
-            #answers=answers[0]
+            answers=answers[0]
             if len(answers["answer_start"]) == 0:
                 tokenized_examples["start_positions"].append(cls_index)
                 tokenized_examples["end_positions"].append(cls_index)
