@@ -391,7 +391,7 @@ def main():
             answers = examples[answer_column_name][sample_index]
             # If no answers are given, set the cls_index as answer.
             print(answers)
-            answers=answers[0]
+            #answers=answers[0]
             if len(answers["answer_start"]) == 0:
                 tokenized_examples["start_positions"].append(cls_index)
                 tokenized_examples["end_positions"].append(cls_index)
